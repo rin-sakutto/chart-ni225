@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "recharts": "^2.15.3",
+    "recharts-candlestick": "^1.0.3"
+  }
+}
