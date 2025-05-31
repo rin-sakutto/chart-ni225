@@ -13,7 +13,36 @@ const periods = [
   { label: "1週間", value: "1w" },
 ];
 
+const isMobile = () => {
+  if (typeof window === "undefined") return false;
+  return window.innerWidth <= 600;
+};
+
 const PeriodSelector: React.FC<PeriodSelectorProps> = ({ period, onChange }) => {
+  const [mobile, setMobile] = React.useState(isMobile());
+
+  React.useEffect(() => {
+    const handleResize = () => setMobile(isMobile());
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  if (mobile) {
+    return (
+      <div style={{ marginBottom: 16, textAlign: "center" }}>
+        <select
+          value={period}
+          onChange={e => onChange(e.target.value)}
+          style={{ padding: "6px 16px", borderRadius: 4, border: "1px solid #8884d8" }}
+        >
+          {periods.map((p) => (
+            <option key={p.value} value={p.value}>{p.label}</option>
+          ))}
+        </select>
+      </div>
+    );
+  }
+
   return (
     <div style={{ marginBottom: 16, textAlign: "center" }}>
       {periods.map((p) => (
