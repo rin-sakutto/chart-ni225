@@ -83,11 +83,15 @@ const Chart: React.FC<ChartProps> = ({ data }) => {
     <div style={{ width: "100%", height: 400 }}>
       <h2>日経平均株価（ローソク足・期間選択可）</h2>
       <PeriodSelector period={period} onChange={setPeriod} />
-      <ResponsiveContainer width="100%" height="85%">
+      <ResponsiveContainer width="100%" height="100%">
         <ComposedChart data={filteredData} margin={{ top: 20, right: 30, left: 0, bottom: 0 }} barCategoryGap={2}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="date" minTickGap={40} />
-          <YAxis domain={["auto", "auto"]} />
+          <YAxis
+            domain={[(dataMin: number) => Math.floor(dataMin * 0.995), (dataMax: number) => Math.ceil(dataMax * 1.005)]}
+            allowDataOverflow={false}
+            padding={{ top: 10, bottom: 10 }}
+          />
           <Tooltip />
           <Bar
             dataKey="close"
