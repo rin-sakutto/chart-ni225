@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="bingbot" content="noarchive">
+    <meta name="description" content="日経の指数公式サイト。日経平均株価をはじめとした日本経済新聞社が算出、公表する指数に関する情報を提供いたします。" />
+    <meta name="keywords" content="日経平均,日経225,指数,インデックス" />
+    <title>日経平均プロフィル</title>
+    
+    
+    <script src="/nkave/assets/jquery-3.7.1.min.js"></script>
+      <script src="/nkave/assets/jquery.ui.datepicker-ja.js"></script>
+    <script src="/nkave/assets/bootstrap.min.js"></script>
+    <script src="/nkave/assets/bootstrap.bundle.min.js"></script>
+    <script src="/nkave/assets/jquery-ui.min.js"></script>
+    <script src="/nkave/assets/jquery.colorbox-min.js"></script>
+    <script src="/nkave/assets/w2ui-1.5.rc1.min.js"></script>
+        <link rel="stylesheet" media="screen, print" href="/nkave/assets/kite-color.css" />
+    <link rel="stylesheet" media="screen, print" href="/nkave/assets/bootstrap.min.css" />
+    <link rel="stylesheet" media="screen, print" href="/nkave/assets/bootstrap-icons.css" />
+    <link rel="stylesheet" media="screen, print" href="/nkave/assets/colorbox.css" />
+    <link rel="stylesheet" media="screen, print" href="/nkave/assets/jquery-ui.min.css" />
+    <link rel="stylesheet" media="screen, print" href="/nkave/assets/jquery.jqplot.min.css" />
+    <link rel="stylesheet" media="screen" href="/nkave/assets/w2ui-1.5.rc1.min.css" />
+    <link rel="stylesheet" media="screen, print" href="/nkave/assets/style-extend-bootstrap-style.css" />
+    <link rel="stylesheet" media="screen, print" href="/nkave/assets/style-common-parts.css" />
+    <link rel="stylesheet" media="screen, print" href="/nkave/assets/style-global.css" />
+    <link rel="stylesheet" media="screen, print" href="/nkave/assets/style-icon.css" />
+    <link rel="stylesheet" media="screen, print" href="/nkave/assets/style.css" />
+    
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="uJoMXssWPauasWgVErM6r6r71K05KckanJBm/Z8Wzf0kV2+grL5T5Exi2jQD2zgAp3nKJY27dUUp7+RYX2nQRw==" />
+    
+        <script type="text/javascript">
+    function onClick_submit() {
+      var form = document.forms["modal_form"];
+      form.method = "post";
+      form.action = "/nkave/submit_modal";
+      form.submit();
+      $("#topPageModal").modal("hide");
+    };
+    function onClick_close() {
+      var detail_url = document.getElementById("detail-url").value;
+      var form = document.forms["modal_form"];
+      form.method = "post";
+      form.action = "/nkave/close_modal";
+      form.submit();
+      $("#topPageModal").modal("hide");
+    };
+  </script>
+
+      
+      
+      
+      
+      
+      
+      
+    
+      
+      
+      
+     
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-28645102-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'UA-28645102-1');
+    </script>
+
+  </head>
+    
+  <body>
+    
+    
+    
+    <div class="idx-ja">
+        
+        <!-- Sidebar -->
+        <nav class="navbar navbar-expand-lg idx-sidebar sticky-top">
+            
+            <div class="container-fluid px-0">
+                
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#gNav" aria-controls="offcanvasNavbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                
+                <!-- Brand -->
+                <div class="idx-brand">
+                    <a class="navbar-brand" href="/nkave">日経平均プロフィル</a>
+                    <p class="idx-tagline">日経の指数公式サイト</p>
+                </div>
+                
+                    <div class="offcanvas offcanvas-start" tabindex="-1" id="gNav" aria-labelledby="gNavLabel">
+                        
