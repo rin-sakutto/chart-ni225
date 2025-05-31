@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
-import Chart from "./Chart/Chart";
-import ForcastInput from "./Forcast/ForcastInput";
+import Chart from "./Components/Chart/Chart";
+import ForcastInput from "./Components/Forcast/ForcastInput";
+import Sidebar from "./Components/Bar/Sidebar";
+import TradingViewWidget from "./Components/Chart/TradingViewWidget";
 
 function MainApp() {
   const [data, setData] = useState<{ date: string; open: number; high: number; low: number; close: number }[]>([]);
   const [forcast, setForcast] = useState("");
+  const [showTradingView, setShowTradingView] = useState(false);
 
   useEffect(() => {
     fetch("/nikkei_hist.csv")
@@ -32,10 +35,25 @@ function MainApp() {
       });
   }, []);
 
+  const handleMenuClick = (key: string) => {
+    if (key === "chart") {
+      setShowTradingView(true);
+    } else {
+      setShowTradingView(false);
+    }
+  };
+
   return (
-    <div className="App">
-      <ForcastInput value={forcast} onChange={setForcast} />
-      <Chart data={data} />
+    <div className="App" style={{ display: "flex", minHeight: "100vh" }}>
+      <Sidebar onMenuClick={handleMenuClick} />
+      <div style={{ marginLeft: 80, flex: 1, padding: 24 }}>
+        <ForcastInput value={forcast} onChange={setForcast} />
+        {showTradingView ? (
+          <TradingViewWidget />
+        ) : (
+          <Chart data={data} />
+        )}
+      </div>
     </div>
   );
 }
